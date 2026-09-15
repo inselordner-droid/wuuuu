@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#1d2436">
+<title>WUUUU! – Sprich, und die Brücke steigt</title>
+<style>
+  :root { color-scheme: dark; }
+  html, body {
+    margin: 0; padding: 0; height: 100%; overflow: hidden;
+    background: #141a28;
+    background-image: radial-gradient(circle at 50% 18%, #2b3550 0%, #141a28 70%);
+    font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: none; user-select: none; -webkit-user-select: none;
+  }
+  #wrap { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; }
+  canvas#game {
+    display: block; background: #7ec8f2;
+    border-radius: 6px;
+    box-shadow: 0 0 0 3px rgba(255,255,255,.12), 0 16px 48px rgba(0,0,0,.65);
+    cursor: pointer;
+  }
+  #rotate {
+    position: fixed; inset: 0; display: none; z-index: 20; gap: 14px;
+    align-items: center; justify-content: center; flex-direction: column;
+    background: #141a28; color: #ffd447; text-align: center;
+    font-size: 20px; font-weight: bold; letter-spacing: 1px;
+  }
+  #rotate span { font-size: 54px; animation: tip 1.6s ease-in-out infinite; }
+  @keyframes tip { 0%,100% { transform: rotate(0deg); } 50% { transform: rotate(90deg); } }
+  @media (prefers-reduced-motion: reduce) { #rotate span { animation: none; } }
+</style>
+</head>
+<body>
+<div id="wrap"><canvas id="game" width="1440" height="810"></canvas></div>
+<div id="rotate"><span>▭</span>Dreh dein Tablet</div>
+<script src="wuuu.js"></script>
+</body>
+</html>
